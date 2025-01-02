@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/walleye.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Walleye</title>
+  </head>
+  <body>
+    <script type="module" src="/src/main.ts"></script>
+    <div id="app">
+      <!--
+      <img id="logo" src="${walleyeLogo}" class="logo vanilla" alt="Walleye logo" />
+      -->
+      <h1>Walleye</h1>
+      <h3>Fishing Tournament Tracker</h3>
+      <div id="tournamentScreen">
+        <h2>Tournament</h2>
+        <!-- Add fish form -->
+        <div id="addFish" class="card fishform">
+          <h3>Add Fish</h3>
+          <select id="name" placeholder="a">
+            <!-- Participants will be populated later -->
+            <option value="">Select a name</option>
+          </select>
+          <input type="number" id="length" placeholder="Length (inches)" />
+          <!-- Species dropdown -->
+          <select id="species">
+            <option value="walleye">Walleye</option>
+            <option value="pike">Pike</option>
+            <option value="sauger">Walleye</option>
+            <option value="perch">Perch</option>
+            <option value="yellow perch">Crappie</option>
+            <option value="crappie">Crappie</option>
+            <option value="catfish">Salmon</option>
+            <option value="freshwater drum">Catfish</option>
+            <option value="goldeye">Pike</option>
+            <option value="mooneye">Pike</option>
+            <option value="carp">Crappie</option>
+            <option value="sturgeon">Crappie</option>
+            <option value="sucker">Crappie</option>
+            <option value="largemouth bass">Bass</option>
+            <option value="trout">Trout</option>
+            <option value="muskie">Muskie</option>
+          </select>
+          <input type="file" id="fishImageInput" accept="image/*" />
+          <img id="fishImagePreview" alt="fish" hidden />
+          <button id="fishSubmit" type="submit">Submit</button>
+          <p id="fishSubmitErrorMessage" class="errorMessage"></p>
+        </div>
+
+        <table id="fishTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Species</th>
+              <th>Length</th>
+              <th>Image</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="fishTableBody"></tbody>
+        </table>
+        
+        <dialog id="fishTableDialog">
+          <img id="fishTableDialogImage" alt="fish" />
+          <button id="fishTableDialogCloseButton">Close</button>
+        </dialog>
+      </div>
+
+      <div id="loginScreen" class="card signin">
+        <input type="text" id="email" placeholder="Email" />
+        <br>
+        <input type="text" id="name" placeholder="Name" />
+        <br>
+        <input type="password" id="password" placeholder="Password" />
+        <br>
+        <button id="sign-in" type="button">Sign In</button>
+        <button id="register" type="button">Register</button>
+        <p id="message"></p>
+      </div>
+    </div>
+  </body>
+</html>
