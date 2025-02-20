@@ -34,7 +34,6 @@ const fishImagePreview = document.querySelector<HTMLImageElement>('#fishImagePre
 const fishTableBody = document.querySelector<HTMLTableElement>('#fishTableBody')!;
 const fishTableDialog = document.querySelector<HTMLDialogElement>('#fishTableDialog')!;
 const fishTableDialogImage = document.querySelector<HTMLImageElement>('#fishTableDialogImage')!;
-const fishTableDialogCloseButton = document.querySelector<HTMLButtonElement>('#fishTableDialogCloseButton')!;
 
 interface FishSubmission {
   name: string;
@@ -54,9 +53,6 @@ auth.onAuthStateChanged(user => {
     loginScreen.style.display = 'block';
     tournamentScreen.style.display = 'none';
   }
-
-  // loginScreen.style.display = 'none';
-  document.querySelector<HTMLDivElement>('#loginScreen')!.style.display = 'none';
 });
 
 async function getParticipants(): Promise<string[]> {
@@ -234,8 +230,10 @@ fishSubmitButton.addEventListener('click', async (event) => {
   updateFishTable();
 });
 
-fishTableDialogCloseButton.addEventListener('click', () => {
-  fishTableDialog.close();
+fishTableDialog.addEventListener('click', (event) => {
+  if (event.target === fishTableDialog) {
+    fishTableDialog.close();
+  }
 });
 
 getParticipants().then(participants => {
