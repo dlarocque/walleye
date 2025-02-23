@@ -44,8 +44,6 @@ interface FishSubmission {
 }
 
 auth.onAuthStateChanged(user => {
-  console.log(user);
-  console.log(loginScreen)
   if (user) {
     loginScreen.style.display = 'none';
     tournamentScreen.style.display = 'block';
