@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/walleye.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fishing tournament tracker" />
     <title>Walleye</title>
   </head>
   <body>
@@ -19,12 +20,14 @@
         <!-- Add fish form -->
         <div id="addFish" class="card fishform">
           <h3>Add Fish</h3>
+          <label for="name">Fisher's Name</label>
           <select id="name" placeholder="a">
             <!-- Participants will be populated later -->
-            <option value="">Select a name</option>
           </select>
-          <input type="number" id="length" placeholder="Length (inches)" />
+          <label for="length">Fish Length (inches)</label>
+          <input type="number" id="length" placeholder="9.5" />
           <!-- Species dropdown -->
+          <label for="species">Fish Species</label>
           <select id="species">
             <option value="walleye">Walleye</option>
             <option value="pike">Pike</option>
@@ -43,6 +46,7 @@
             <option value="trout">Trout</option>
             <option value="muskie">Muskie</option>
           </select>
+          <label for="fishImageInput">Fish Image</label>
           <input type="file" id="fishImageInput" accept="image/*" />
           <img id="fishImagePreview" alt="fish" hidden />
           <button id="fishSubmit" type="submit">Submit</button>
